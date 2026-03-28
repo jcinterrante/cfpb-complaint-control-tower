@@ -41,16 +41,6 @@ This demo was built to show:
 - reusable SQL views for queue, timeline, KPI, and summary reporting
 - a working Databricks dashboard that feels like a small internal product rather than a notebook exercise
 
-## Intended Positioning
-
-This project is designed as a portfolio-quality demo for roles such as:
-
-- Databricks Solutions Architect
-- Delivery Solutions Architect
-- Data / Analytics Solution Design roles
-
-It emphasizes architecture, governed transformation patterns, operational workflow design, and business-facing presentation over pure data science experimentation.
-
 ## Core Workflow
 
 The app follows this high-level flow:
@@ -73,8 +63,6 @@ This is a deliberately scoped v1.
 - Scoring is **rule-based and explainable**, not ML-driven
 - Workflow is intentionally lightweight
 - The design favors realism and clarity over feature breadth
-
-This project explicitly avoids scope creep and does not attempt to become a full enterprise complaint platform.
 
 ## Architecture
 
@@ -134,20 +122,11 @@ These choices were made to keep the project credible as a small operational lake
 
 ## Risk Scoring Approach
 
-The scoring model is intentionally explainable and configurable.
+The scoring model is designed to be explainable and configurable.
 
-Instead of machine learning, the app uses transparent business logic supported by reference/configuration tables. This makes the output easier to understand, defend, and tune for demo purposes.
+The app uses transparent business logic supported by reference/configuration tables. This makes the output easier to understand, defend, and tune.
 
 At a high level, the model evaluates complaint clusters using business-defined issue weighting and alerting logic, then assigns alert levels that can be triaged operationally.
-
-This project is meant to demonstrate:
-
-- explainability
-- governed logic
-- configurable weighting
-- operational usability
-
-—not predictive optimization.
 
 ## Operational Workflow
 
@@ -299,17 +278,6 @@ This project was built around a few consistent principles:
 - realistic v1 scope
 - intentional avoidance of scope creep
 
-## What This Project Demonstrates
-
-This project is intended to show the ability to:
-
-- design a small but coherent lakehouse application
-- model curated bronze / silver / gold / app layers
-- translate analytical outputs into operational workflows
-- build explainable business logic instead of defaulting to ML
-- create dashboard-ready views and issue-management patterns
-- balance realism, architecture, and delivery discipline in a scoped v1
-
 ## What Is Intentionally Deferred to v2
 
 The following were intentionally left out of v1:
@@ -324,20 +292,6 @@ The following were intentionally left out of v1:
 - ML / predictive models
 
 These are possible future extensions, but excluding them was part of keeping v1 realistic and finishable.
-
-## Repository Notes
-
-This repository is intended as a portfolio and architecture showcase for the project.
-
-Because the live version was developed and run in Databricks, the public repo focuses on:
-
-- implementation artifacts
-- SQL logic
-- architecture and design explanation
-- screenshots of the working dashboard
-- demo-oriented documentation
-
-A universally public live Databricks app was not the goal of this repo. The purpose of this repository is to make the solution understandable and shareable outside the Databricks workspace.
 
 ## Suggested Repo Structure
 
