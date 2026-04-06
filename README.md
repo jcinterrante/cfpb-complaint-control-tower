@@ -67,43 +67,79 @@ This is a deliberately scoped v1.
 ## Architecture
 
 The project uses a medallion-style lakehouse pattern in Databricks.
+```mermaid
+flowchart LR
 
-### Catalog
+    A[CFPB Public Complaint Data<br/>Scoped Demo Extract]
 
-- `cfpb_risk`
+    subgraph B["Bronze"]
+        B1[cfpb_complaints_raw<br/>Raw ingestion]
+    end
 
-### Schemas
+    subgraph C["Silver"]
+        C1[cfpb_complaints_clean<br/>Standardized complaint records]
+    end
 
-- `bronze`
-- `silver`
-- `gold`
-- `reference`
-- `app`
+    subgraph R["Reference"]
+        R1[bank_map]
+        R2[issue_weights]
+    end
 
-### Table structure
+    subgraph G["Gold"]
+        G1[issue_clusters_daily<br/>Daily complaint issue clustering]
+        G2[issue_clusters_monthly<br/>Monthly issue clustering]
+        G3[risk_alerts<br/>Alert output]
+    end
 
-#### Bronze
-- `cfpb_risk.bronze.cfpb_complaints_raw`
+    S[Explainable Risk Scoring<br/>Trend signals + issue weights + alert logic]
 
-#### Reference
-- `cfpb_risk.reference.bank_map`
-- `cfpb_risk.reference.issue_weights`
+    subgraph APP["App Layer"]
+        APP1[issues<br/>Current workflow state]
+        APP2[issue_events<br/>Audit trail / history]
+    end
 
-#### Silver
-- `cfpb_risk.silver.cfpb_complaints_clean`
+    subgraph V["Views"]
+        V1[v_issue_queue]
+        V2[v_issue_timeline]
+        V3[v_issue_kpis]
+    end
 
-#### Gold
-- `cfpb_risk.gold.issue_clusters_daily`
-- `cfpb_risk.gold.issue_clusters_monthly`
-- `cfpb_risk.gold.risk_alerts`
+    subgraph D["Databricks Dashboard"]
+        D1[Complaint Peer Comparison]
+        D2[Control Tower Overview]
+        D3[Issue Investigation]
+    end
 
-#### App
-- `cfpb_risk.app.issues`
-- `cfpb_risk.app.issue_events`  
+    U[User Actions<br/>Assign owner / update status / add note]
 
-The design uses monthly issue clusters as the primary operational scoring grain, while daily clusters support charts and investigation views. The main operational grain is:
+    A --> B1
+    B1 --> C1
 
-**institution × product × issue × month** :contentReference
+    C1 --> G1
+    C1 --> G2
+
+    R1 --> G1
+    R1 --> G2
+    R2 --> S
+
+    G2 --> S
+    S --> G3
+
+    G3 --> APP1
+
+    APP1 --> V1
+    APP2 --> V2
+    APP1 --> V3
+
+    G1 --> D1
+    V1 --> D2
+    V3 --> D2
+    V2 --> D3
+
+    U --> APP2
+    U --> APP1
+```
+
 
 ## Data Design Principles
 
