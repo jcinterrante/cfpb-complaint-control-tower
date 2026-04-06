@@ -214,8 +214,19 @@ Grouped summary views exist by:
 ## Dashboard
 
 A working Databricks dashboard has been built for v1. 
+### Page 1: Peer Bank Comparison
+![Dashboard Page 1](https://github.com/jcinterrante/cfpb-complaint-control-tower/blob/main/dashboard-images/cfpb_complaint_dashboard_page1.jpg?raw=true)
 
-### Page 1: Control Tower Overview
+Designed to compare CFPB complaint volumes across banks.
+
+- Line graph displaying complaint receipts over time
+- Bar graph showing overall counts during target period
+- Heat map showing bank's volumes by complaint product
+
+This page is intended to provide high-level summary numbers for banks' CFPB complaint volumes. The focus is on providing useful comparisons between banks.
+
+### Page 2: Control Tower Overview
+![Dashboard Page 2](https://github.com/jcinterrante/cfpb-complaint-control-tower/blob/main/dashboard-images/cfpb_complaint_dashboard_page2.jpg?raw=true)
 
 Designed to provide a fast operational summary using:
 
@@ -231,7 +242,8 @@ This page is intended to communicate:
 - How to interpret the queue
 - Why the application is operationally credible
 
-### Page 2: Issue Investigation
+### Page 3: Issue Investigation
+![Dashboard Page 3](https://github.com/jcinterrante/cfpb-complaint-control-tower/blob/main/dashboard-images/cfpb_complaint_dashboard_page3.jpg?raw=true)
 
 Designed for drill-down and issue review using:
 
@@ -266,16 +278,6 @@ The seeding logic was later improved so timestamps feel historically real:
 - Due dates are seeded relative to created date
 
 This makes the dashboard, timelines, and KPIs feel less synthetic while keeping production logic separate from demo logic.
-
-## Dashboard Images
-### Page 1 - Peer Comparisons
-![Dashboard Page 1](https://github.com/jcinterrante/cfpb-complaint-control-tower/blob/main/dashboard-images/cfpb_complaint_dashboard_page1.jpg?raw=true)
-
-### Page 2 - Issue Control Tower
-![Dashboard Page 2](https://github.com/jcinterrante/cfpb-complaint-control-tower/blob/main/dashboard-images/cfpb_complaint_dashboard_page2.jpg?raw=true)
-
-### Page 3 - Issue Lookup
-![Dashboard Page 3](https://github.com/jcinterrante/cfpb-complaint-control-tower/blob/main/dashboard-images/cfpb_complaint_dashboard_page3.jpg?raw=true)
 
 ## Possible Build-Outs for v2
 
