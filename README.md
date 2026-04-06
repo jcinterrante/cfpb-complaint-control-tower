@@ -267,6 +267,13 @@ The seeding logic was later improved so timestamps feel historically real:
 
 This makes the dashboard, timelines, and KPIs feel less synthetic while keeping production logic separate from demo logic.
 
+## Dashboard Images
+![Dashboard Page 1](dashboard images/cfpb_complaint_dashboard 2026-04-06 page 1.jpg)
+
+![Dashboard Page 2](dashboard images/cfpb_complaint_dashboard 2026-04-06 page 2.jpg)
+
+![Dashboard Page 3](dashboard images/cfpb_complaint_dashboard 2026-04-06 page 3.jpg)
+
 ## Possible Build-Outs for v2
 
 The following were intentionally left out of v1, but are the most promising future directions for a v2 build:
