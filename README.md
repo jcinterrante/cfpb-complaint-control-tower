@@ -268,11 +268,14 @@ The seeding logic was later improved so timestamps feel historically real:
 This makes the dashboard, timelines, and KPIs feel less synthetic while keeping production logic separate from demo logic.
 
 ## Dashboard Images
-![Dashboard Page 1](https://github.com/jcinterrante/cfpb-complaint-control-tower/dashboard-images/cfpb_complaint_dashboard_page1.jpg)
+### Page 1 - Peer Comparisons
+![Dashboard Page 1](https://github.com/jcinterrante/cfpb-complaint-control-tower/blob/main/dashboard-images/cfpb_complaint_dashboard_page1.jpg?raw=true)
 
-![Dashboard Page 2](https://github.com/jcinterrante/cfpb-complaint-control-tower/dashboard-images/cfpb_complaint_dashboard_page2.jpg)
+### Page 2 - Issue Control Tower
+![Dashboard Page 2](https://github.com/jcinterrante/cfpb-complaint-control-tower/blob/main/dashboard-images/cfpb_complaint_dashboard_page2.jpg?raw=true)
 
-![Dashboard Page 3](https://github.com/jcinterrante/cfpb-complaint-control-tower/dashboard-images/cfpb_complaint_dashboard_page3.jpg)
+### Page 3 - Issue Lookup
+![Dashboard Page 3](https://github.com/jcinterrante/cfpb-complaint-control-tower/blob/main/dashboard-images/cfpb_complaint_dashboard_page3.jpg?raw=true)
 
 ## Possible Build-Outs for v2
 
